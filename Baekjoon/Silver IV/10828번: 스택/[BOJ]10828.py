@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 #
 # 스택
-# https://www.acmicpc.net/problem/13305
+# https://www.acmicpc.net/problem/10828
 #
 # 1. list의 append와 pop을 이용해 구현한다.
 #
