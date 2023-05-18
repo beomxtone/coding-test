@@ -4,8 +4,8 @@ from collections import deque
 INF = 10**9
 
 #
-# 1504번: 특정한 최단 경로
-# https://www.acmicpc.net/problem/1504
+# 13549번: 숨바꼭질 3
+# https://www.acmicpc.net/problem/13549
 #
 # 1. 다익스트라 혹은 BFS 활용
 # 2. 1초 후: X-1, X+1 / 0초 후: 2*X 의 3가지 방법을 반복문으로 BFS에서 최단경로 저장
