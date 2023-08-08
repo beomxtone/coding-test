@@ -7,11 +7,21 @@ import java.io.IOException;
  *
  * 2. strategy: 해결 전략
  * 트리의 최하위 노드에 연산자가 있을 경우 올바른 식이 아니다.
+ * 자식 노드가 있는 경우 연산자여야 한다.
  *
  * 3. note:
  */
 
 class Solution {
+    public static boolean isNumeric(String input) {
+        try {
+            Double.parseDouble(input);
+            return true;
+        }
+        catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,9 +34,16 @@ class Solution {
                 String[] input = br.readLine().split(" ");
 
                 // 최하위 노드는 2칸으로 주어짐
-                if (flag && input.length == 2) {
+                if (input.length == 2) {
                     // 최하위 노드 중 연산자가 있는지 검사
-                    if (input[1].equals("+") || input[1].equals("-") || input[1].equals("*") || input[1].equals("\\")) {
+                    if (flag && input[1].equals("+") || input[1].equals("-") || input[1].equals("*") || input[1].equals("\\")) {
+                        flag = false;
+                    }
+                }
+                // 자식 노드가 있는 경우
+                else {
+                    // 연산자인지 확인
+                    if (flag && isNumeric(input[1])) {
                         flag = false;
                     }
                 }
