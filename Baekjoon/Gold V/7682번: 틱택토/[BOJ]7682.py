@@ -50,7 +50,14 @@ while True:
       print('invalid') if isWin(game, 'O') else print('valid')
     else:
       # x 개수가 o+1일 땐, o가 이길 수 없음
-      print ('invalid') if isWin(game, 'O') else print('valid')
+      if isWin(game, 'O'):
+        print ('invalid')
+      # 꽉 찬 경우는 valid
+      elif game.count('.') == 0:
+        print('valid')
+      # 최종 상태가 아님
+      else:
+        print('invalid')
   # O가 이긴 상황인지 체크
   elif xCnt == oCnt:
     if isWin(game, 'O'):
